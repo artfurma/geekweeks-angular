@@ -3,13 +3,13 @@
     Known characters
   </mat-card-title>
   <mat-card-content>
-    <mat-nav-list>
-      <a mat-list-item href="#" *ngFor="let character of characters">
-        <p>
-          {{character.name}}
-        </p>
+    <mat-action-list>
+      <mat-list-item (click)="selectCharacter(character)" *ngFor="let character of characters">
+        <p class="id">{{character.id}}</p>
+        <p class="name">{{character.name}}</p>
+        <div style="flex: 1"></div>
         <p class="description">{{character.aliases[0]}}</p>
-      </a>
-    </mat-nav-list>
+      </mat-list-item>
+    </mat-action-list>
   </mat-card-content>
 </mat-card>

@@ -1,0 +1,14 @@
+.content {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+
+  .left-panel {
+    width: 50%;
+    margin-right: 16px;
+  }
+
+  .right-panel {
+      flex: 1;
+  }
+}

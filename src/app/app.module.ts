@@ -11,11 +11,13 @@ import { CharacterListComponent } from './character-list/character-list.componen
 import { MatListModule } from '@angular/material/list';
 import { MatButtonModule } from '@angular/material';
 import { HttpClientModule } from '@angular/common/http';
+import { CharacterDetailsComponent } from './character-details/character-details.component';
 @NgModule({
   declarations: [
     AppComponent,
     CharactersComponent,
-    CharacterListComponent
+    CharacterListComponent,
+    CharacterDetailsComponent
   ],
   imports: [
     BrowserModule,

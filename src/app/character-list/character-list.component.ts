@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Character } from '../models/character';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-character-list',
@@ -14,8 +15,16 @@ export class CharacterListComponent implements OnInit {
   constructor(private http: HttpClient) { }
 
   ngOnInit() {
-    this.http.get('https://anapioficeandfire.com/api/characters?page=5&pageSize=50')
-      .subscribe((data: Character[]) => this.characters = data);
+    this.http.get<Character[]>('https://anapioficeandfire.com/api/characters?page=5&pageSize=50').pipe(
+      map(response => response.map(character => {
+        character.id = character.url.match(/\d+/)[0];
+        return character;
+      }))
+    ).subscribe(data => this.characters = data);
+  }
+
+  selectCharacter(character: Character) {
+    console.log(character);
   }
 
 }
