@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Character } from '../models/character';
 import { map } from 'rxjs/operators';
@@ -11,6 +11,7 @@ import { map } from 'rxjs/operators';
 export class CharacterListComponent implements OnInit {
 
   characters: Character[];
+  @Output() characterSelected = new EventEmitter<Character>();
 
   constructor(private http: HttpClient) { }
 
@@ -25,6 +26,7 @@ export class CharacterListComponent implements OnInit {
 
   selectCharacter(character: Character) {
     console.log(character);
+    this.characterSelected.emit(character);
   }
 
 }
