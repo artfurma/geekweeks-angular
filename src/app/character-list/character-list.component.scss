@@ -1,4 +1,10 @@
 .character-list {
     height: 720px;
     overflow: auto;
+
+    .description {
+        margin-left: 32px;
+        color: #ccc;
+        font-weight: 400;
+    }
 }
