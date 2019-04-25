@@ -3,8 +3,18 @@
   <mat-card-title>
     {{character.name}}
   </mat-card-title>
-    Character Details
+  <mat-card-subtitle>
+    <p>Character Details</p>
+  </mat-card-subtitle>
   <mat-card-content>
-    asdasd
+    <p><b>Gender:</b> {{character.gender}}</p>
+    <p><b>Culture:</b> {{character.culture ? character.culture : 'N/A'}}</p>
+    <p><b>Born:</b> {{character.born ? character.born : 'N/A'}}</p>
+    <p><b>Died:</b> {{character.died ? character.died : 'N/A'}}</p>
+    <p><b>Titles:</b> {{character.titles?.length > 0 ? character.titles : 'N/A'}}</p>
+    <p><b>Aliases:</b> {{character.aliases?.length > 0 ? character.aliases : 'N/A'}}</p>
+    <p><b>Father:</b> {{character.father ? character.father : 'N/A'}}</p>
+    <p><b>Mother:</b> {{character.mother ? character.mother : 'N/A'}}</p>
+    <p><b>Spouse:</b> {{character.spouse ? character.spouse : 'N/A'}}</p>
   </mat-card-content>
 </mat-card>
